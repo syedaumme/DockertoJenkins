@@ -3,5 +3,6 @@ COPY . /app
 WORKDIR /app
 RUN pip install -r requirements.txt 
 EXPOSE 5000 
-ENTRYPOINT [ "python" ] 
-CMD [ "application.py" ] 
+ENV FLASK_APP=application.py
+CMD ["flask", "run", "--host=0.0.0.0"]
+ 
